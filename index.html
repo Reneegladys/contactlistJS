@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktlista</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h3>New contact</h3>
+        <form id="contactForm">
+            <input type="text" class="contact-name" name="name" required placeholder="Name" autocomplete="name">
+            <input type="tel" class="contact-phone" name="phone" required placeholder="Mobilenumber" autocomplete="tel">
+            <button type="submit">New</button>
+            <button type="button" id="clearListBtn">Clear List</button>
+            <div class="error-message">You may not create an empty contact</div>
+        </form>
+    </div>
+
+    <div id="kontaktLista">
+        <h3>Contacts</h3>
+        <ul id="kontakter">
+            <li class="kontakt">
+                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="tel" class="contact-phone" required placeholder="0700493525">
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+            </li>
+            <li class="kontakt">
+                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="tel" class="contact-phone" required placeholder="0700493525">
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+            </li>
+            <li class="kontakt">
+                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="tel" class="contact-phone" required placeholder="0700493525">
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
