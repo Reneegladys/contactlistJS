@@ -1,0 +1,67 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black; 
+}
+
+h3 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: green; 
+    color: white;
+    font-size: 10px;
+}
+
+button:hover {
+    background-color: rgb(45, 193, 45); 
+}
+
+#kontaktLista {
+    margin-top: 20px;
+}
+
+.kontakt {
+    display: flex;
+    align-items: center;
+    margin: 10px 350px 10px 300px;
+    background: white; 
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black; 
+    border-radius: 10px; 
+}
+
+
+.editBtn {
+    background-color: #ffcc00; 
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.editBtn:hover {
+    background-color: #e6b800; 
+}
+
+.deleteBtn {
+    background-color: #dc3545; 
+}
+
+.deleteBtn:hover {
+    background-color: #c82333; 
+}
