@@ -9,36 +9,39 @@
 <body>
 
     <div class="container">
-        <h3>New contact</h3>
+        <h2>New contact</h2>
         <form id="contactForm">
-            <input type="text" class="contact-name" name="name" required placeholder="Name" autocomplete="name">
-            <input type="tel" class="contact-phone" name="phone" required placeholder="Mobilenumber" autocomplete="tel">
+            <input type="text" class="contact-name" name="name" placeholder="Name">
+            <input type="tel" class="contact-phone" name="phone" placeholder="Mobilenumber">
             <button type="submit">New</button>
             <button type="button" id="clearListBtn">Clear List</button>
-            <div class="error-message">You may not create an empty contact</div>
+            <p class="error-message"></p>
         </form>
     </div>
 
     <div id="kontaktLista">
-        <h3>Contacts</h3>
+        <h2>Contacts</h2>
         <ul id="kontakter">
             <li class="kontakt">
-                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="text" class="contact-name" required placeholder="Renée1">
                 <input type="tel" class="contact-phone" required placeholder="0700493525">
                 <button class="editBtn">Edit</button>
                 <button class="deleteBtn">Delete</button>
+                <p class="error-message"></p>
             </li>
             <li class="kontakt">
-                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="text" class="contact-name" required placeholder="Renée2">
                 <input type="tel" class="contact-phone" required placeholder="0700493525">
                 <button class="editBtn">Edit</button>
                 <button class="deleteBtn">Delete</button>
+                <p class="error-message"></p>
             </li>
             <li class="kontakt">
-                <input type="text" class="contact-name" required placeholder="Renée">
+                <input type="text" class="contact-name" required placeholder="Renée3">
                 <input type="tel" class="contact-phone" required placeholder="0700493525">
                 <button class="editBtn">Edit</button>
                 <button class="deleteBtn">Delete</button>
+                <p class="error-message"></p>
             </li>
         </ul>
     </div>
