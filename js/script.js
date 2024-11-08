@@ -1,7 +1,6 @@
 
 
 // Always select DOM elements first
-
 const contactForm = document.getElementById('contactForm');
 const kontakter = document.getElementById('kontakter');
 const clearListBtn = document.getElementById('clearListBtn');
