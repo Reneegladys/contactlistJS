@@ -1,69 +1,68 @@
-// Select DOM elements
+
+
+// Always select DOM elements first
+
 const contactForm = document.getElementById('contactForm');
 const kontakter = document.getElementById('kontakter');
 const clearListBtn = document.getElementById('clearListBtn');
 const formErrorMessage = contactForm.querySelector('.error-message');
 
-// Function to show error messages in the form
+console.log({ contactForm, kontakter, clearListBtn });
+
 function showFormError(message) {
     formErrorMessage.textContent = message;
     formErrorMessage.style.display = 'block';
+    console.log("Error:", message);
 }
 
-// Function to clear form error messages
 function clearFormError() {
     formErrorMessage.textContent = '';
     formErrorMessage.style.display = 'none';
+    console.log("Form error cleared.");
 }
 
-// Function to validate contact input
 function validateContact(name, phone) {
-    if (!name) {
-        return 'Name is required.';
-    }
-    if (!phone) {
-        return 'Phone number is required.';
-    }
+    console.log("Validating contact:", { name, phone });
+    if (!name) return 'Name is required.';
+    if (!phone) return 'Phone number is required.';
     return null;
 }
 
-// Function to create a new contact
 function createContact(name, phone) {
+    console.log("Creating contact:", { name, phone });
     const validationError = validateContact(name, phone);
     if (validationError) {
         showFormError(validationError);
         return;
     }
 
-    clearFormError(); // Clear any existing error message
+    clearFormError();
 
     const listItem = document.createElement('li');
     listItem.classList.add('kontakt');
-    listItem.innerHTML = `
+    listItem.innerHTML = ` 
         <input type="text" class="contact-name" value="${name}" disabled />
         <input type="tel" class="contact-phone" value="${phone}" disabled />
         <button class="editBtn">Edit</button>
         <button class="deleteBtn">Delete</button>
         <p class="error-message" style="display: none; color: red;"></p>
     `;
-
     kontakter.appendChild(listItem);
 
     const editButton = listItem.querySelector('.editBtn');
     const deleteButton = listItem.querySelector('.deleteBtn');
 
-    // Bind the edit functionality
     editButton.addEventListener('click', function () {
+        console.log("Edit clicked for:", { name, phone });
         editContact(listItem, editButton);
     });
 
-    // Bind the delete functionality
     deleteButton.addEventListener('click', function () {
+        console.log("Delete clicked for:", { name, phone });
         deleteContact(listItem);
     });
 }
 
-// Function to edit a contact
 function editContact(listItem, editButton) {
     const nameField = listItem.querySelector('.contact-name');
     const phoneField = listItem.querySelector('.contact-phone');
@@ -71,12 +70,10 @@ function editContact(listItem, editButton) {
     const isDisabled = nameField.disabled;
 
     if (isDisabled) {
-        // Enable fields for editing
         nameField.disabled = false;
         phoneField.disabled = false;
         editButton.textContent = 'Save';
     } else {
-        // Validate inputs before saving
         const name = nameField.value.trim();
         const phone = phoneField.value.trim();
         const validationError = validateContact(name, phone);
@@ -86,7 +83,6 @@ function editContact(listItem, editButton) {
             errorDisplay.style.display = 'block';
         } else {
             errorDisplay.style.display = 'none';
-            // Disable fields and save changes
             nameField.disabled = true;
             phoneField.disabled = true;
             editButton.textContent = 'Edit';
@@ -94,28 +90,26 @@ function editContact(listItem, editButton) {
     }
 }
 
-// Function to delete a contact
 function deleteContact(listItem) {
     kontakter.removeChild(listItem);
+    console.log("Contact deleted.");
 }
 
-// Function to clear the entire contact list
 function clearContactList() {
     kontakter.innerHTML = '';
     clearFormError();
+    console.log("All contacts cleared.");
 }
 
-// Event listener for the form submission to create a contact
 contactForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
+    event.preventDefault();
     const name = contactForm.name.value.trim();
     const phone = contactForm.phone.value.trim();
     createContact(name, phone);
-
-    // Reset the form after creating a contact
     contactForm.reset();
+    console.log("Form reset.");
 });
 
-// Event listener for the "Clear List" button to clear all contacts
-clearListBtn.addEventListener('click', clearContactList);
+clearListBtn.addEventListener('click', function() {
+    clearContactList();
+});
