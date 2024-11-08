@@ -13,7 +13,7 @@ body {
     border: 1px solid black; 
 }
 
-h3 {
+h2 {
     text-align: center;
     color: black;
     margin-bottom: 20px;
@@ -40,6 +40,11 @@ button:hover {
     background-color: rgb(202, 15, 15); 
     color: white;
     font-size: 10px;
+}
+
+.error-message {
+    display: none;
+    color: red;
 }
 
 #kontaktLista {
